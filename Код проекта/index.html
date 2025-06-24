@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Сайт веб-разработчика">
+    
+    <!-- Настройки -->
+    <link rel="preload" href="style/standart.css" as="style">
+    <link rel="stylesheet" href="style/standart.css">
+
+    <!-- Все стили блоков -->
+    <link rel="preload" href="style/style.css" as="style">
+    <link rel="stylesheet" href="style/style.css">
+    
+    <!-- Адаптив -->
+    <link rel="preload" href="style/responsive.css" as="style">
+    <link rel="stylesheet" href="style/responsive.css">
+
+    <!-- Логотип -->
+    <link rel="icon" href="image/logo.png" sizes="any">
+    <link rel="apple-touch-icon" href="image/logo.png">
+    
+    <title>Дамир - Веб-разработчик</title>
+</head>
+<body>
+    <header class="header container">
+        <img class="header__logo" src="image/DAMIR.svg" alt="logo">
+        <nav class="header__menu">
+            <a class="header__menu-link" href="https://xeney.github.io/" target="_blank">Мой сайт</a>
+            <a class="header__menu-link" href="https://t.me/Ghosers" target="_blank">Telegram</a>
+            <a class="header__menu-link" href="tel:+79878166533" target="_blank">Телефон</a>
+            <a class="header__menu-link header__menu-link--sign-in" href="/admin/dashboard.php">Войти</a>
+        </nav>
+    </header>
+    
+    <section class="hello-block container">
+        <div>
+            <h1 class="hello-block__accent-text">
+                <small style="font-size: 32px;">Это моё</small><br>
+                тестовое задание
+            </h1>
+            <img class="hello-block__background" src="image/Ellipse-1.svg" alt="background">
+        </div>
+        <img class="hello-block__image" src="image/image-1.png" alt="main image">
+    </section>
+    
+    <section class="about-block container">
+        <div>
+            <img class="about-block__head" src="image/head.png" alt="head image">
+            <img class="about-block__decoration about-block__decoration--ellipse" src="image/Ellipse 2.svg" alt="ellipse decoration">
+        </div>
+        <div class="about-block__content">
+            <img class="about-block__about" src="image/ABOUT.svg" alt="about title">
+            <h2 class="epic-title">
+                <a href="https://xeney.github.io/" target="_blank" class="epic-link" aria-label="Мой основной сайт">
+                <span class="epic-text" data-text="Кто я такой">Кто я такой</span>
+                <span class="epic-hover-effects"></span>
+                </a>
+            </h2>
+            <p class="about-block__text about-block__text--black"><strong>Дамир Варламов<br>веб разработчик</strong></p>
+            <p class="about-block__text about-block__text--regular">Я создаю быстрые и надежные веб-приложения на Golang. Мой стек: бэкенд (Go, PostgreSQL), фронтенд (HTMX, SCSS) и деплой (Docker, VPS).</p>
+            <p class="about-block__text about-block__text--regular">Специализируюсь на чистой архитектуре, REST API и админ-панелях. Делаю формы с валидацией, динамические интерфейсы без JS и разворачиваю проекты в облаке. Предпочитаю минималистичный дизайн и максимальную производительность. Готов реализовать ваш проект от идеи до работающего сайта.</p>
+        </div>
+    </section>
+    
+    <img class="line-divider" src="image/line.svg" alt="divider line">
+    
+    <section class="form-block container">
+        <h2 class="form-block__title">Оставьте сообщение</h2>
+        <img class="form-block__decoration" src="image/esc.jpg" alt="decoration">
+        <form class="form-block__form" action="submit.php" method="POST" id="main-form">
+            <div class="form-block__column">
+                <div class="form-block__column">
+                    <input class="form-block__input" type="text" id="name" name="name" 
+                           placeholder="Как вас зовут" required minlength="2" maxlength="20">
+                    <input class="form-block__input form-block__input--phone" type="tel" id="phone" 
+                           name="phone" placeholder="+7 (900) 100 10 10" required>
+                </div>
+                <button class="form-block__button" type="submit">Отправить</button>
+            </div>
+            <textarea class="form-block__textarea" id="comment" name="comment" 
+                      placeholder="Оставьте сообщение" required minlength="10" maxlength="500"></textarea>
+        </form>
+    </section>
+    
+    <img class="footer" src="image/footer.svg" alt="footer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js"></script>
+    <script src="./script/form.js"></script>
+</body>
+</html>

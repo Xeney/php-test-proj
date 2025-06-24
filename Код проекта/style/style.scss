@@ -1,0 +1,471 @@
+@import 'standart';
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+// ========== Global Styles ==========
+body {
+  background-color: #000;
+  color: $text-color;
+  font-family: $font-text;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+// ========== Header Styles ==========
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 100px;
+  padding: 10px 30px;
+
+  &__logo {
+    width: 170px;
+  }
+
+  &__menu {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  &__menu-link {
+    position: relative;
+    display: block;
+    color: #fff;
+    font-family: $font-main;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: all 0.4s ease;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 1;
+
+    // Общий эффект для всех кнопок
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $accent-color;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 50px;
+    }
+
+    &:hover {
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba($accent-color, 0.3);
+
+      &::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba($accent-color, 0.2);
+    }
+
+    // Индивидуальные эффекты для каждой кнопки
+    &:nth-child(1) { // Главная
+      &::before {
+        background: linear-gradient(45deg, #F83D3D, #FF6B6B);
+      }
+      &:hover {
+        box-shadow: 0 10px 20px rgba(248, 61, 61, 0.3);
+      }
+    }
+
+    &:nth-child(2) { // Telegram
+      &::before {
+        background: linear-gradient(45deg, #0088cc, #00aced);
+      }
+      &:hover {
+        box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+      }
+    }
+
+    &:nth-child(3) { // Телефон
+      &::before {
+        background: linear-gradient(45deg, #25D366, #5ef98a);
+      }
+      &:hover {
+        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+      }
+    }
+
+    // Специальный стиль для кнопки Войти
+    &--sign-in {
+      background-color: rgba(255, 255, 255, 0.125);
+      padding: 12px 32px;
+      
+      &::before {
+        background: linear-gradient(45deg, #F83D3D, #ff2d2d);
+      }
+
+      &:hover {
+        box-shadow: 0 10px 25px rgba(248, 61, 61, 0.4);
+        transform: translateY(-3px) scale(1.05);
+      }
+    }
+  }
+}
+
+// ========== Hello Block Styles ==========
+.hello-block {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__image {
+    position: relative;
+    left: 200px;
+    bottom: 100px;
+    width: 600px;
+    height: 600px;
+  }
+
+  &__accent-text {
+    font-family: $font-accent;
+    font-size: 96px;
+    line-height: 1;
+  }
+
+  &__background {
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    z-index: -1;
+  }
+}
+
+// ========== About Block Styles ==========
+.about-block {
+  margin-top: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__head {
+    position: relative;
+    right: 200px;
+    width: 700px;
+  }
+
+  &__content {
+    width: 648px;
+  }
+
+  &__decoration {
+    &--ellipse {
+      position: absolute;
+      left: -200px;
+      top: 850px;
+      z-index: -2;
+      width: 1200px;
+    }
+  }
+
+  &__text {
+    &--gray {
+      font-family: $font-main;
+      font-size: 36px;
+      color: rgba(255, 255, 255, 0.329);
+    }
+
+    &--black {
+      padding-top: 35px;
+      font-family: $font-main;
+      font-size: 40px;
+      line-height: 1.2;
+    }
+
+    &--regular {
+      font-family: $font-text;
+      font-size: 24px;
+      margin: 18px 0;
+      color: rgba(255, 255, 255, 0.251);
+    }
+  }
+}
+
+// ========== Line Divider ==========
+.line-divider {
+  position: relative;
+  bottom: 9px;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+// ========== Form Block Styles ==========
+.form-block {
+  margin-bottom: 50px;
+  position: relative;
+
+  &__title {
+    font-family: $font-accent;
+    font-size: 90px;
+    text-align: center;
+    margin-bottom: 120px;
+  }
+
+  &__decoration {
+    position: absolute;
+    right: -300px;
+    width: 500px;
+    z-index: -1;
+  }
+
+  &__form {
+    background-color: rgba(255, 255, 255, 0.125);
+    padding: 50px 90px;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.125);
+  }
+
+  &__column {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 10px;
+  }
+
+  &__input {
+    font-family: "Unbounded";
+    font-size: 36px;
+    color: #fff;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.125);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+
+    &--phone {
+      font-family: "Unbounded";
+      font-size: 32px;
+    }
+  }
+
+  &__textarea {
+    font-family: "Unbounded";
+    font-size: 36px;
+    color: #fff;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.125);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    max-width: 450px;
+    min-width: 450px;
+    min-height: 400px;
+    max-height: 700px;
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 100px;
+    width: fit-content;
+    padding: 25px 60px;
+    font-size: 40px;
+    font-family: $font-main;
+    color: #fff;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #F83D3D, #FF1E1E);
+    box-shadow: 0 5px 15px rgba(248, 61, 61, 0.4);
+    overflow: hidden;
+    z-index: 1;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    // Эффект "жидкого металла"
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        rgba(255,255,255,0.8) 0%,
+        rgba(255,255,255,0.5) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      transform: translateX(-100%) rotate(45deg);
+      transition: all 0.6s ease;
+      filter: blur(5px);
+    }
+
+    // Внутренняя тень для объема
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 25px;
+      background: transparent;
+      box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+      z-index: -1;
+    }
+
+    // Текст кнопки с отдельным эффектом
+    span {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    // Эффект при наведении
+    &:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(248, 61, 61, 0.6),
+                  0 0 0 5px rgba(255,255,255,0.1);
+
+      &::before {
+        transform: translateX(100%) rotate(45deg);
+      }
+
+      span {
+        transform: scale(1.05);
+      }
+    }
+
+    // Эффект при нажатии
+    &:active {
+      transform: translateY(-2px) scale(0.98);
+      box-shadow: 0 5px 10px rgba(248, 61, 61, 0.8),
+                  inset 0 0 10px rgba(0,0,0,0.2);
+
+      &::before {
+        transform: translateX(0) rotate(45deg);
+        transition-duration: 0.2s;
+      }
+    }
+
+    // Анимация "пульсации" для привлечения внимания
+    animation: pulse-glow 2s infinite alternate;
+
+    @keyframes pulse-glow {
+      0% {
+        box-shadow: 0 5px 15px rgba(248, 61, 61, 0.4);
+      }
+      100% {
+        box-shadow: 0 5px 25px rgba(248, 61, 61, 0.8),
+                    0 0 15px rgba(255, 100, 100, 0.6);
+      }
+    }
+  }
+}
+
+// ========== Footer Styles ==========
+.footer {
+  min-width: 1300px;
+}
+
+
+// ========== Крутые дополнения для души :) ==========
+
+/* Добавьте этот код в style.css */
+.epic-title {
+  position: relative;
+  display: inline-block;
+  perspective: 1000px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.epic-title .epic-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.epic-title .epic-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  background: linear-gradient(90deg, #F83D3D, #FF9E9E, #F83D3D);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(248, 61, 61, 0.3);
+  transition: all 0.6s ease;
+}
+
+.epic-title .epic-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.epic-title .epic-hover-effects {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #F83D3D, #FF9E9E);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.epic-title:hover .epic-text {
+  background-position: 100% center;
+  text-shadow: 0 0 15px rgba(248, 61, 61, 0.5);
+}
+
+.epic-title:hover .epic-text::before {
+  transform: translateX(100%);
+}
+
+.epic-title:hover .epic-hover-effects {
+  transform: scaleX(1);
+}
+
+.epic-title:active .epic-text {
+  transform: scale(0.98);
+}
+
+/* Анимация градиента */
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 100% center; }
+}

@@ -1,0 +1,431 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 1400px;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: "AR One Sans", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 100px;
+  padding: 10px 30px;
+}
+.header__logo {
+  width: 170px;
+}
+.header__menu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.header__menu-link {
+  position: relative;
+  display: block;
+  color: #fff;
+  font-family: "Unifix SP Demo", sans-serif;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.4s ease;
+  border-radius: 50px;
+  overflow: hidden;
+  z-index: 1;
+}
+.header__menu-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F83D3D;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 50px;
+}
+.header__menu-link:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(248, 61, 61, 0.3);
+}
+.header__menu-link:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header__menu-link:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(248, 61, 61, 0.2);
+}
+.header__menu-link:nth-child(1)::before {
+  background: linear-gradient(45deg, #F83D3D, #FF6B6B);
+}
+.header__menu-link:nth-child(1):hover {
+  box-shadow: 0 10px 20px rgba(248, 61, 61, 0.3);
+}
+.header__menu-link:nth-child(2)::before {
+  background: linear-gradient(45deg, #0088cc, #00aced);
+}
+.header__menu-link:nth-child(2):hover {
+  box-shadow: 0 10px 20px rgba(0, 136, 204, 0.3);
+}
+.header__menu-link:nth-child(3)::before {
+  background: linear-gradient(45deg, #25D366, #5ef98a);
+}
+.header__menu-link:nth-child(3):hover {
+  box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+.header__menu-link--sign-in {
+  background-color: rgba(255, 255, 255, 0.125);
+  padding: 12px 32px;
+}
+.header__menu-link--sign-in::before {
+  background: linear-gradient(45deg, #F83D3D, #ff2d2d);
+}
+.header__menu-link--sign-in:hover {
+  box-shadow: 0 10px 25px rgba(248, 61, 61, 0.4);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.hello-block {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.hello-block__image {
+  position: relative;
+  left: 200px;
+  bottom: 100px;
+  width: 600px;
+  height: 600px;
+}
+.hello-block__accent-text {
+  font-family: "Bulbasaur SP", sans-serif;
+  font-size: 96px;
+  line-height: 1;
+}
+.hello-block__background {
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  z-index: -1;
+}
+
+.about-block {
+  margin-top: 250px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.about-block__head {
+  position: relative;
+  right: 200px;
+  width: 700px;
+}
+.about-block__content {
+  width: 648px;
+}
+.about-block__decoration--ellipse {
+  position: absolute;
+  left: -200px;
+  top: 850px;
+  z-index: -2;
+  width: 1200px;
+}
+.about-block__text--gray {
+  font-family: "Unifix SP Demo", sans-serif;
+  font-size: 36px;
+  color: rgba(255, 255, 255, 0.329);
+}
+.about-block__text--black {
+  padding-top: 35px;
+  font-family: "Unifix SP Demo", sans-serif;
+  font-size: 40px;
+  line-height: 1.2;
+}
+.about-block__text--regular {
+  font-family: "AR One Sans", sans-serif;
+  font-size: 24px;
+  margin: 18px 0;
+  color: rgba(255, 255, 255, 0.251);
+}
+
+.line-divider {
+  position: relative;
+  bottom: 9px;
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.form-block {
+  margin-bottom: 50px;
+  position: relative;
+}
+.form-block__title {
+  font-family: "Bulbasaur SP", sans-serif;
+  font-size: 90px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+.form-block__decoration {
+  position: absolute;
+  right: -300px;
+  width: 500px;
+  z-index: -1;
+}
+.form-block__form {
+  background-color: rgba(255, 255, 255, 0.125);
+  padding: 50px 90px;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 30px;
+  border: 5px solid rgba(255, 255, 255, 0.125);
+}
+.form-block__column {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+.form-block__input {
+  font-family: "Unbounded";
+  font-size: 36px;
+  color: #fff;
+  padding: 15px 40px;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+.form-block__input--phone {
+  font-family: "Unbounded";
+  font-size: 32px;
+}
+.form-block__textarea {
+  font-family: "Unbounded";
+  font-size: 36px;
+  color: #fff;
+  padding: 15px 40px;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  max-width: 450px;
+  min-width: 450px;
+  min-height: 400px;
+  max-height: 700px;
+}
+.form-block__button {
+  position: relative;
+  margin-top: 100px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 25px 60px;
+  font-size: 40px;
+  font-family: "Unifix SP Demo", sans-serif;
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(45deg, #F83D3D, #FF1E1E);
+  box-shadow: 0 5px 15px rgba(248, 61, 61, 0.4);
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: pulse-glow 2s infinite alternate;
+}
+.form-block__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: translateX(-100%) rotate(45deg);
+  transition: all 0.6s ease;
+  filter: blur(5px);
+}
+.form-block__button::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 25px;
+  background: transparent;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+.form-block__button span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+.form-block__button:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(248, 61, 61, 0.6), 0 0 0 5px rgba(255, 255, 255, 0.1);
+}
+.form-block__button:hover::before {
+  transform: translateX(100%) rotate(45deg);
+}
+.form-block__button:hover span {
+  transform: scale(1.05);
+}
+.form-block__button:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 0 5px 10px rgba(248, 61, 61, 0.8), inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.form-block__button:active::before {
+  transform: translateX(0) rotate(45deg);
+  transition-duration: 0.2s;
+}
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 5px 15px rgba(248, 61, 61, 0.4);
+  }
+  100% {
+    box-shadow: 0 5px 25px rgba(248, 61, 61, 0.8), 0 0 15px rgba(255, 100, 100, 0.6);
+  }
+}
+
+.footer {
+  min-width: 1300px;
+}
+
+/* Добавьте этот код в style.css */
+.epic-title {
+  position: relative;
+  display: inline-block;
+  perspective: 1000px;
+  margin: 30px 0;
+  overflow: hidden;
+}
+
+.epic-title .epic-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.epic-title .epic-text {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  background: linear-gradient(90deg, #F83D3D, #FF9E9E, #F83D3D);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(248, 61, 61, 0.3);
+  transition: all 0.6s ease;
+}
+
+.epic-title .epic-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.epic-title .epic-hover-effects {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #F83D3D, #FF9E9E);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.epic-title:hover .epic-text {
+  background-position: 100% center;
+  text-shadow: 0 0 15px rgba(248, 61, 61, 0.5);
+}
+
+.epic-title:hover .epic-text::before {
+  transform: translateX(100%);
+}
+
+.epic-title:hover .epic-hover-effects {
+  transform: scaleX(1);
+}
+
+.epic-title:active .epic-text {
+  transform: scale(0.98);
+}
+
+/* Анимация градиента */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}/*# sourceMappingURL=style.css.map */
